@@ -84,7 +84,7 @@ bintray {
         name = gradleProperties.getProperty("proj_name")
         desc = gradleProperties.getProperty("proj_description")
         websiteUrl = gradleProperties.getProperty("proj_websiteurl")
-        issuesTrackerUrl = gradleProperties.getProperty("proj_issuetrackerurl")
+        issueTrackerUrl = gradleProperties.getProperty("proj_issuetrackerurl")
         vcsUrl = gradleProperties.getProperty("proj_giturl")
         licenses = ["Apache-2.0"]
         publish = true
