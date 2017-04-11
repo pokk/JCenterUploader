@@ -38,8 +38,8 @@ install {
                     }
                 }
                 scm {
-                    connection gradleProperties.getProperty("proj_giturl")
-                    developerConnection gradleProperties.getProperty("proj_giturl")
+                    connection gradleProperties.getProperty("proj_vcsurl")
+                    developerConnection gradleProperties.getProperty("proj_vcsurl")
                     url gradleProperties.getProperty("proj_websiteurl")
                 }
             }
@@ -85,7 +85,7 @@ bintray {
         desc = gradleProperties.getProperty("proj_description")
         websiteUrl = gradleProperties.getProperty("proj_websiteurl")
         issueTrackerUrl = gradleProperties.getProperty("proj_issuetrackerurl")
-        vcsUrl = gradleProperties.getProperty("proj_giturl")
+        vcsUrl = gradleProperties.getProperty("proj_vcsurl")
         licenses = ["Apache-2.0"]
         publish = true
         publicDownloadNumbers = true
