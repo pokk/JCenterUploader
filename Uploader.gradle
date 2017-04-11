@@ -9,19 +9,27 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 Properties gradleProperties = new Properties()
 gradleProperties.load(project.rootProject.file('gradle.properties').newDataInputStream())
 
+version = gradleProperties.getProperty("proj_version")
+group = gradleProperties.getProperty("proj_group")
+
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
             project {
-                packaging 'aar'
+                name gradleProperties.getProperty("proj_libname")
                 groupId gradleProperties.getProperty("proj_group")
                 artifactId gradleProperties.getProperty("proj_artifactid")
-
-                // Add your description here
-                name gradleProperties.getProperty("proj_libname")
+                version gradleProperties.getProperty("proj_version")
+                packaging 'aar'
+                url gradleProperties.getProperty("proj_websiteurl")
                 description gradleProperties.getProperty("proj_description")
-
+                licenses {
+                    license {
+                        name gradleProperties.getProperty("license_name")
+                        url gradleProperties.getProperty("license_url")
+                    }
+                }
                 developers {
                     developer {
                         id gradleProperties.getProperty("developer_id")
@@ -38,8 +46,6 @@ install {
         }
     }
 }
-
-version = gradleProperties.getProperty("proj_version")
 
 if (project.hasProperty("android")) { // Android libraries
     task sourcesJar(type: Jar) {
@@ -71,8 +77,8 @@ artifacts {
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-
     configurations = ['archives']
+
     pkg {
         repo = gradleProperties.getProperty("proj_repo")
         name = gradleProperties.getProperty("proj_name")
