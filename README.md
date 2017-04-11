@@ -132,5 +132,5 @@ apply from: 'Uploader.gradle'
 Under the Mac OS environment.
 
 1. Open terminal window
-2. exec ./gradlew install
-3. exec ./gradlew bintrayUpload
+2. exec `./gradlew install`
+3. exec `./gradlew bintrayUpload`
