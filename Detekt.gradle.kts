@@ -1,11 +1,3 @@
-
-import io.gitlab.arturbosch.detekt.detekt
-
-plugins {
-    id("io.gitlab.arturbosch.detekt").version("1.0.0.RC9.2")
-    id("com.github.ben-manes.versions").version("1.0.0.RC9.2")
-}
-
 subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
