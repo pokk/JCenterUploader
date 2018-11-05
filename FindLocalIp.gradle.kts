@@ -1,3 +1,5 @@
+import java.net.NetworkInterface
+
 // Get the ip address by interface name
 // en0 is WIFI interface
 fun getLocalIp(interfaceName: String) = NetworkInterface.getByName(interfaceName)
