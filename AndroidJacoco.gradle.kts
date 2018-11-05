@@ -1,6 +1,3 @@
-import com.android.build.gradle.internal.tasks.JacocoTask
-import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
-
 tasks.withType<Test> {
     configure<JacocoTaskExtension> {
         isIncludeNoLocationClasses = true
